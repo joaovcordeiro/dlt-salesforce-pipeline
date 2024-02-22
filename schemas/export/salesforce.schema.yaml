@@ -1,0 +1,1786 @@
+version: 6
+version_hash: 3GAe4rZFNVcOqgcYIgMnzuUKIYF8IGPpknK9U4uh6JM=
+engine_version: 8
+name: salesforce
+tables:
+  _dlt_version:
+    columns:
+      version:
+        data_type: bigint
+        nullable: false
+      engine_version:
+        data_type: bigint
+        nullable: false
+      inserted_at:
+        data_type: timestamp
+        nullable: false
+      schema_name:
+        data_type: text
+        nullable: false
+      version_hash:
+        data_type: text
+        nullable: false
+      schema:
+        data_type: text
+        nullable: false
+    write_disposition: skip
+    description: Created by DLT. Tracks schema updates
+  _dlt_loads:
+    columns:
+      load_id:
+        data_type: text
+        nullable: false
+      schema_name:
+        data_type: text
+        nullable: true
+      status:
+        data_type: bigint
+        nullable: false
+      inserted_at:
+        data_type: timestamp
+        nullable: false
+      schema_version_hash:
+        data_type: text
+        nullable: true
+    write_disposition: skip
+    description: Created by DLT. Tracks completed loads
+  opportunity:
+    columns:
+      id:
+        data_type: text
+        nullable: false
+        primary_key: true
+      is_deleted:
+        data_type: bool
+        nullable: true
+      account_id:
+        data_type: text
+        nullable: true
+      record_type_id:
+        data_type: text
+        nullable: true
+      is_private:
+        data_type: bool
+        nullable: true
+      name:
+        data_type: text
+        nullable: true
+      stage_name:
+        data_type: text
+        nullable: true
+      amount:
+        data_type: double
+        nullable: true
+      probability:
+        data_type: double
+        nullable: true
+      expected_revenue:
+        data_type: double
+        nullable: true
+      close_date:
+        data_type: text
+        nullable: true
+      type:
+        data_type: text
+        nullable: true
+      lead_source:
+        data_type: text
+        nullable: true
+      is_closed:
+        data_type: bool
+        nullable: true
+      is_won:
+        data_type: bool
+        nullable: true
+      forecast_category:
+        data_type: text
+        nullable: true
+      forecast_category_name:
+        data_type: text
+        nullable: true
+      currency_iso_code:
+        data_type: text
+        nullable: true
+      has_opportunity_line_item:
+        data_type: bool
+        nullable: true
+      pricebook2_id:
+        data_type: text
+        nullable: true
+      owner_id:
+        data_type: text
+        nullable: true
+      created_date:
+        data_type: timestamp
+        nullable: true
+      created_by_id:
+        data_type: text
+        nullable: true
+      last_modified_date:
+        data_type: timestamp
+        nullable: true
+      last_modified_by_id:
+        data_type: text
+        nullable: true
+      system_modstamp:
+        data_type: timestamp
+        nullable: true
+      push_count:
+        data_type: bigint
+        nullable: true
+      last_stage_change_date:
+        data_type: timestamp
+        nullable: true
+      fiscal_quarter:
+        data_type: bigint
+        nullable: true
+      fiscal_year:
+        data_type: bigint
+        nullable: true
+      contract_id:
+        data_type: text
+        nullable: true
+      has_open_activity:
+        data_type: bool
+        nullable: true
+      has_overdue_task:
+        data_type: bool
+        nullable: true
+      budget_confirmed_c:
+        data_type: bool
+        nullable: true
+      discovery_completed_c:
+        data_type: bool
+        nullable: true
+      parceiro_c:
+        data_type: text
+        nullable: true
+      regional_c:
+        data_type: text
+        nullable: true
+      n_mero_c:
+        data_type: text
+        nullable: true
+      subtipo_c:
+        data_type: text
+        nullable: true
+      venda_c:
+        data_type: text
+        nullable: true
+      data_de_in_cio_c:
+        data_type: text
+        nullable: true
+      modo_de_faturamento_c:
+        data_type: text
+        nullable: true
+      data_de_t_rmino_c:
+        data_type: text
+        nullable: true
+      canais_c:
+        data_type: text
+        nullable: true
+      irpj_csll_venda_c:
+        data_type: double
+        nullable: true
+      companhia_da_holding_c:
+        data_type: text
+        nullable: true
+      n_mero_de_parcelas_negociadas_c:
+        data_type: double
+        nullable: true
+      dura_o_do_contrato_meses_c:
+        data_type: double
+        nullable: true
+      opp_ativa_c:
+        data_type: text
+        nullable: true
+      per_odo_de_renova_o_c:
+        data_type: text
+        nullable: true
+      ano_de_renova_o_c:
+        data_type: double
+        nullable: true
+      calor_da_oportunidade_c:
+        data_type: text
+        nullable: true
+      probabilidade_de_fechamento_c:
+        data_type: text
+        nullable: true
+      suporte_da_equipe_t_cnica_c:
+        data_type: text
+        nullable: true
+      proposta_enviada_ao_cliente_c:
+        data_type: text
+        nullable: true
+      pipeline_ponderado_c:
+        data_type: double
+        nullable: true
+      n_fe_c:
+        data_type: double
+        nullable: true
+      lucro_bruto_c:
+        data_type: double
+        nullable: true
+      margem_bruta_c:
+        data_type: double
+        nullable: true
+      lucro_l_quido_c:
+        data_type: double
+        nullable: true
+      margem_l_quida_c:
+        data_type: double
+        nullable: true
+      receita_l_quida_total_c:
+        data_type: double
+        nullable: true
+      investimento_total_c:
+        data_type: double
+        nullable: true
+      impostos_n_fe_venda_c:
+        data_type: double
+        nullable: true
+      impostos_n_fe_real_c:
+        data_type: double
+        nullable: true
+      receita_l_quida_total_real_c:
+        data_type: double
+        nullable: true
+      lucro_bruto_real_c:
+        data_type: double
+        nullable: true
+      irpj_csll_real_c:
+        data_type: double
+        nullable: true
+      lucro_l_quido_real_c:
+        data_type: double
+        nullable: true
+      centro_de_resultado_c:
+        data_type: text
+        nullable: true
+      valor_do_contrato_c:
+        data_type: double
+        nullable: true
+      valor_faturado_do_contrato_c:
+        data_type: double
+        nullable: true
+      time_de_solu_es_c:
+        data_type: text
+        nullable: true
+      contrato_lpu_c:
+        data_type: bool
+        nullable: true
+      numero_projeto_c:
+        data_type: text
+        nullable: true
+      fase_controladoria_c:
+        data_type: text
+        nullable: true
+      valor_quarter_mrr_c:
+        data_type: double
+        nullable: true
+      perfil_criador_opp_c:
+        data_type: text
+        nullable: true
+      n5_diretoria_c:
+        data_type: text
+        nullable: true
+      n4_diretoria_c:
+        data_type: text
+        nullable: true
+      count_c:
+        data_type: double
+        nullable: true
+      oportunidade_count_c:
+        data_type: double
+        nullable: true
+      cancelada_distrato_c:
+        data_type: bool
+        nullable: true
+      bypassed_c:
+        data_type: bool
+        nullable: true
+      controle_de_anexos_c:
+        data_type: bool
+        nullable: true
+      nomero_do_projeto_formatado_c:
+        data_type: text
+        nullable: true
+      count_won_c:
+        data_type: double
+        nullable: true
+      ciclo_vendas_c:
+        data_type: double
+        nullable: true
+      mes_encerramento_c:
+        data_type: text
+        nullable: true
+      solicita_o_atendida_c:
+        data_type: bool
+        nullable: true
+      documentos_entregues_c:
+        data_type: bool
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      prazo_do_contrato_meses_c:
+        data_type: double
+        nullable: true
+      valor_mensal_opp_c:
+        data_type: double
+        nullable: true
+      rv_prod_semantix_c:
+        data_type: double
+        nullable: true
+      sdp_rv2_c:
+        data_type: double
+        nullable: true
+      description:
+        data_type: text
+        nullable: true
+      total_opportunity_quantity:
+        data_type: double
+        nullable: true
+      competitor_c:
+        data_type: text
+        nullable: true
+      last_amount_changed_history_id:
+        data_type: text
+        nullable: true
+      last_close_date_changed_history_id:
+        data_type: text
+        nullable: true
+      custo_total_c:
+        data_type: double
+        nullable: true
+      markup_c:
+        data_type: double
+        nullable: true
+      modo_de_faturamento_subscription_c:
+        data_type: text
+        nullable: true
+      valor_mensalidade_produto_semantix_c:
+        data_type: double
+        nullable: true
+      valor_do_setup_c:
+        data_type: double
+        nullable: true
+      data_de_inicio_c:
+        data_type: text
+        nullable: true
+      data_de_termino_c:
+        data_type: text
+        nullable: true
+      valor_total_contrato_c:
+        data_type: double
+        nullable: true
+      last_activity_date:
+        data_type: text
+        nullable: true
+      contact_id:
+        data_type: text
+        nullable: true
+      prediction_einstein_ai_c:
+        data_type: double
+        nullable: true
+      total_de_horas_contratadas_c:
+        data_type: text
+        nullable: true
+      status_c:
+        data_type: text
+        nullable: true
+      loss_reason_c:
+        data_type: text
+        nullable: true
+      cluster_motivo_perda_c:
+        data_type: text
+        nullable: true
+      campaign_id:
+        data_type: text
+        nullable: true
+      n_mero_da_oportunidade_original_c:
+        data_type: text
+        nullable: true
+      partner_account_id:
+        data_type: text
+        nullable: true
+      modo_de_faturamento_professional_service_c:
+        data_type: text
+        nullable: true
+      sdr_c:
+        data_type: text
+        nullable: true
+      discovery_lead_c:
+        data_type: text
+        nullable: true
+      data_da_discovery_c:
+        data_type: text
+        nullable: true
+      quantidade_de_funcion_rios_c:
+        data_type: text
+        nullable: true
+      data_atribui_o_prop_c:
+        data_type: text
+        nullable: true
+      pre_sales_respons_vel_c:
+        data_type: text
+        nullable: true
+      tipo_de_neg_cio_c:
+        data_type: text
+        nullable: true
+      tipo_de_solu_o_c:
+        data_type: text
+        nullable: true
+      tipo_produto_c:
+        data_type: text
+        nullable: true
+      lead_campaign_c:
+        data_type: text
+        nullable: true
+      lead_source_c:
+        data_type: text
+        nullable: true
+      data_de_cria_o_hub_c:
+        data_type: text
+        nullable: true
+      data_prop_c:
+        data_type: text
+        nullable: true
+      data_ultima_atividade_c:
+        data_type: text
+        nullable: true
+      tier_do_deal_c:
+        data_type: text
+        nullable: true
+      data_ultima_modifica_o_c:
+        data_type: text
+        nullable: true
+      envolver_sc_c:
+        data_type: text
+        nullable: true
+      partner_c:
+        data_type: text
+        nullable: true
+      deal_id_l_ink_api_c:
+        data_type: text
+        nullable: true
+      data_sql_c:
+        data_type: text
+        nullable: true
+      custo_total_real_c:
+        data_type: double
+        nullable: true
+      valor_total_emitido_em_nota_c:
+        data_type: double
+        nullable: true
+      margem_bruta_real_c:
+        data_type: double
+        nullable: true
+      margem_l_quida_real_c:
+        data_type: double
+        nullable: true
+      markup_real_c:
+        data_type: double
+        nullable: true
+      emperatura_da_oportunidad_c:
+        data_type: text
+        nullable: true
+      next_step:
+        data_type: text
+        nullable: true
+      data_iin_cio_de_faturamento_c:
+        data_type: text
+        nullable: true
+      sales_engineer_status_c:
+        data_type: text
+        nullable: true
+      tipo_de_oportunidade_c:
+        data_type: text
+        nullable: true
+      n5_c:
+        data_type: text
+        nullable: true
+      igpm_c:
+        data_type: text
+        nullable: true
+      tipo_de_renova_o_do_contrato_c:
+        data_type: text
+        nullable: true
+      poc_c:
+        data_type: text
+        nullable: true
+      atividade_necess_ria_c:
+        data_type: text
+        nullable: true
+      executivo_de_canais_parcerias_c:
+        data_type: text
+        nullable: true
+      micro_motivo_churn_c:
+        data_type: text
+        nullable: true
+      macro_motivo_do_churn_c:
+        data_type: text
+        nullable: true
+      data_opp_c:
+        data_type: text
+        nullable: true
+      data_sal_c:
+        data_type: text
+        nullable: true
+      tempo_no_sql_intro_c:
+        data_type: double
+        nullable: true
+      demo_c:
+        data_type: text
+        nullable: true
+      solutions_consultants_c:
+        data_type: text
+        nullable: true
+      pa_s_da_parceria_c:
+        data_type: text
+        nullable: true
+      data_perda_c:
+        data_type: text
+        nullable: true
+      discovery_agendada_c:
+        data_type: text
+        nullable: true
+      ltima_fase_antes_fechada_perdida_c:
+        data_type: text
+        nullable: true
+      data_aceite_ae_c:
+        data_type: text
+        nullable: true
+      motivo_cancelamento_c:
+        data_type: text
+        nullable: true
+      sobre_a_proposta_c:
+        data_type: text
+        nullable: true
+      diferenciais_para_won_c:
+        data_type: text
+        nullable: true
+      data_inicio_fase_c:
+        data_type: text
+        nullable: true
+      duracao_fase_atual_c:
+        data_type: double
+        nullable: true
+      parceiros_c:
+        data_type: text
+        nullable: true
+      descricao_da_qualificacao_c:
+        data_type: text
+        nullable: true
+      origem_lead_resumo_c:
+        data_type: text
+        nullable: true
+      n_mero_de_contatos_c:
+        data_type: double
+        nullable: true
+      synced_quote_id:
+        data_type: text
+        nullable: true
+      tipo_de_parceria_c:
+        data_type: text
+        nullable: true
+      data_do_cancelamento_c:
+        data_type: text
+        nullable: true
+      fechamento_dentro_do_m_s_atual_c:
+        data_type: text
+        nullable: true
+      renova_o_autom_tica_c:
+        data_type: text
+        nullable: true
+      link_do_checklist_interno_c:
+        data_type: text
+        nullable: true
+      check_list_externo_c:
+        data_type: text
+        nullable: true
+      contato_principal_c:
+        data_type: text
+        nullable: true
+      bypass_date_c:
+        data_type: timestamp
+        nullable: true
+      oportunidadeoriginal_c:
+        data_type: text
+        nullable: true
+      monday_id_c:
+        data_type: text
+        nullable: true
+      jira_task_c:
+        data_type: text
+        nullable: true
+      valor_third_party_c:
+        data_type: double
+        nullable: true
+      oportunidade_gerada_a_partir_da_campanha_c:
+        data_type: text
+        nullable: true
+      origem_lead_tratado_c:
+        data_type: text
+        nullable: true
+      qtd_devs_alocados_fulltime_c:
+        data_type: double
+        nullable: true
+      descricao_origem_c:
+        data_type: text
+        nullable: true
+      conta_c:
+        data_type: text
+        nullable: true
+      link_pasta_cliente_c:
+        data_type: text
+        nullable: true
+      last_viewed_date:
+        data_type: timestamp
+        nullable: true
+      last_referenced_date:
+        data_type: timestamp
+        nullable: true
+      pessoa_que_indicou_c:
+        data_type: text
+        nullable: true
+      e_mail_do_indicante_c:
+        data_type: text
+        nullable: true
+      nome_do_contato_c:
+        data_type: text
+        nullable: true
+      participa_o_da_pessoa_c:
+        data_type: text
+        nullable: true
+      utm_source_c:
+        data_type: text
+        nullable: true
+      utm_campaign_c:
+        data_type: text
+        nullable: true
+      atuacao_c:
+        data_type: text
+        nullable: true
+      processo_de_compra_mapeado_c:
+        data_type: text
+        nullable: true
+      interlocutores_foram_identificados_c:
+        data_type: text
+        nullable: true
+      descri_o_do_processo_de_compra_c:
+        data_type: text
+        nullable: true
+      descri_o_dos_interlocutores_do_processo_c:
+        data_type: text
+        nullable: true
+      faturamento_executado_c:
+        data_type: double
+        nullable: true
+      descricao_motivo_perda_c:
+        data_type: text
+        nullable: true
+      submotivo_perda_c:
+        data_type: text
+        nullable: true
+      criterio_decisao_c:
+        data_type: text
+        nullable: true
+      data_realizado_discovery_c:
+        data_type: timestamp
+        nullable: true
+      previsao_fechamento_c:
+        data_type: text
+        nullable: true
+      problema_identificado_c:
+        data_type: text
+        nullable: true
+      data_entrada_sales_pipeline_c:
+        data_type: text
+        nullable: true
+      observacoes_adicionais_c:
+        data_type: text
+        nullable: true
+      contato_decisor_c:
+        data_type: text
+        nullable: true
+      contato_executor_c:
+        data_type: text
+        nullable: true
+      contato_influenciador_c:
+        data_type: text
+        nullable: true
+      area_empresa_receber_projeto_c:
+        data_type: text
+        nullable: true
+      budget_identificado_bdr_c:
+        data_type: text
+        nullable: true
+      problema_identificado_bdr_c:
+        data_type: text
+        nullable: true
+      segmento_atuacao_c:
+        data_type: text
+        nullable: true
+      solucao_identificada_bdr_c:
+        data_type: text
+        nullable: true
+      utm_term_c:
+        data_type: text
+        nullable: true
+      utm_medium_c:
+        data_type: text
+        nullable: true
+      utm_content_c:
+        data_type: text
+        nullable: true
+      utm_id_c:
+        data_type: text
+        nullable: true
+      precisa_de_apoio_do_sa_c:
+        data_type: text
+        nullable: true
+      data_contract_sent_c:
+        data_type: text
+        nullable: true
+      data_neg_c:
+        data_type: text
+        nullable: true
+      macro_motivo_churn_c:
+        data_type: text
+        nullable: true
+      fase_normalizado_c:
+        data_type: text
+        nullable: true
+      objetivo_da_solicita_o_c:
+        data_type: text
+        nullable: true
+      detalhes_do_projeto_e_necessidade_c:
+        data_type: text
+        nullable: true
+      link_sharepoint_c:
+        data_type: text
+        nullable: true
+      qual_a_pr_xima_tarefa_a_ser_realizada_c:
+        data_type: text
+        nullable: true
+      data_da_solicita_o_c:
+        data_type: text
+        nullable: true
+      prazo_m_ximo_para_atua_o_c:
+        data_type: text
+        nullable: true
+      descri_o_da_pr_xima_tarefa_c:
+        data_type: text
+        nullable: true
+    write_disposition: merge
+  lead:
+    columns:
+      id:
+        data_type: text
+        nullable: false
+        primary_key: true
+      is_deleted:
+        data_type: bool
+        nullable: true
+      last_name:
+        data_type: text
+        nullable: true
+      first_name:
+        data_type: text
+        nullable: true
+      name:
+        data_type: text
+        nullable: true
+      company:
+        data_type: text
+        nullable: true
+      mobile_phone:
+        data_type: text
+        nullable: true
+      email:
+        data_type: text
+        nullable: true
+      website:
+        data_type: text
+        nullable: true
+      photo_url:
+        data_type: text
+        nullable: true
+      lead_source:
+        data_type: text
+        nullable: true
+      status:
+        data_type: text
+        nullable: true
+      industry:
+        data_type: text
+        nullable: true
+      currency_iso_code:
+        data_type: text
+        nullable: true
+      number_of_employees:
+        data_type: bigint
+        nullable: true
+      owner_id:
+        data_type: text
+        nullable: true
+      has_opted_out_of_email:
+        data_type: bool
+        nullable: true
+      is_converted:
+        data_type: bool
+        nullable: true
+      is_unread_by_owner:
+        data_type: bool
+        nullable: true
+      created_date:
+        data_type: timestamp
+        nullable: true
+      created_by_id:
+        data_type: text
+        nullable: true
+      last_modified_date:
+        data_type: timestamp
+        nullable: true
+      last_modified_by_id:
+        data_type: text
+        nullable: true
+      system_modstamp:
+        data_type: timestamp
+        nullable: true
+      last_activity_date:
+        data_type: text
+        nullable: true
+      tipo_c:
+        data_type: text
+        nullable: true
+      regional_c:
+        data_type: text
+        nullable: true
+      demo_c:
+        data_type: text
+        nullable: true
+      interesse_atual_c:
+        data_type: text
+        nullable: true
+      parceiro_c:
+        data_type: text
+        nullable: true
+      email_domain_c:
+        data_type: text
+        nullable: true
+      data_mudan_a_de_fase_c:
+        data_type: text
+        nullable: true
+      intro_call_realizada_c:
+        data_type: bool
+        nullable: true
+      opt_in_whats_app_c:
+        data_type: bool
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      faturamento_anual_c:
+        data_type: double
+        nullable: true
+      salutation:
+        data_type: text
+        nullable: true
+      title:
+        data_type: text
+        nullable: true
+      phone:
+        data_type: text
+        nullable: true
+      country:
+        data_type: text
+        nullable: true
+      description:
+        data_type: text
+        nullable: true
+      street:
+        data_type: text
+        nullable: true
+      city:
+        data_type: text
+        nullable: true
+      state:
+        data_type: text
+        nullable: true
+      postal_code:
+        data_type: text
+        nullable: true
+      account_c:
+        data_type: text
+        nullable: true
+      cargo_c:
+        data_type: text
+        nullable: true
+      converted_date:
+        data_type: text
+        nullable: true
+      converted_account_id:
+        data_type: text
+        nullable: true
+      converted_contact_id:
+        data_type: text
+        nullable: true
+      converted_opportunity_id:
+        data_type: text
+        nullable: true
+      numero_lead_c:
+        data_type: text
+        nullable: true
+      lead_fluxo_id_c:
+        data_type: double
+        nullable: true
+      record_type_id:
+        data_type: text
+        nullable: true
+      activity_metric_id:
+        data_type: text
+        nullable: true
+      pais_lead_c:
+        data_type: text
+        nullable: true
+      id_migra_o_lead_c:
+        data_type: double
+        nullable: true
+      fonte_de_mkt_c:
+        data_type: text
+        nullable: true
+      propriet_rio_do_lead_sf_c:
+        data_type: text
+        nullable: true
+      parceiro_calendly_c:
+        data_type: text
+        nullable: true
+      email_bounced_reason:
+        data_type: text
+        nullable: true
+      email_bounced_date:
+        data_type: timestamp
+        nullable: true
+      tipo_de_parceria_c:
+        data_type: text
+        nullable: true
+      sobre_a_proposta_c:
+        data_type: text
+        nullable: true
+      motivo_da_desqualifica_o_c:
+        data_type: text
+        nullable: true
+      rating:
+        data_type: text
+        nullable: true
+      partner_stack_lead_key_c:
+        data_type: text
+        nullable: true
+      technical_team_c:
+        data_type: text
+        nullable: true
+      tem_urgencia_para_c:
+        data_type: text
+        nullable: true
+      empresa_parceira_c:
+        data_type: text
+        nullable: true
+      canal_de_prospeccao_c:
+        data_type: text
+        nullable: true
+      qual_sua_necessidade_c:
+        data_type: text
+        nullable: true
+      data_intro_call_c:
+        data_type: text
+        nullable: true
+      parceiro_lead_c:
+        data_type: text
+        nullable: true
+      contexto_do_lead_c:
+        data_type: text
+        nullable: true
+      n4_c:
+        data_type: text
+        nullable: true
+      gclid_c:
+        data_type: text
+        nullable: true
+      descricao_qualificacao_c:
+        data_type: text
+        nullable: true
+      executivo_de_canais_parcerias_c:
+        data_type: text
+        nullable: true
+      utm_term_c:
+        data_type: text
+        nullable: true
+      url_pagina_c:
+        data_type: text
+        nullable: true
+      cnpj_da_empresa_indicada_c:
+        data_type: text
+        nullable: true
+      linked_in_c:
+        data_type: text
+        nullable: true
+      email_pessoal_c:
+        data_type: text
+        nullable: true
+      descricao_origem_c:
+        data_type: text
+        nullable: true
+      empresa_indicada_c:
+        data_type: text
+        nullable: true
+      regi_o_c:
+        data_type: text
+        nullable: true
+      linkedin_ad_form_c:
+        data_type: text
+        nullable: true
+      first_call_date_time:
+        data_type: timestamp
+        nullable: true
+      segmento_negocios_c:
+        data_type: text
+        nullable: true
+      principal_interesse_dados_c:
+        data_type: text
+        nullable: true
+      principal_interesse_c:
+        data_type: text
+        nullable: true
+      principal_interesse_financeiro_c:
+        data_type: text
+        nullable: true
+      principal_interesse_industria_c:
+        data_type: text
+        nullable: true
+      principal_interesse_telecom_c:
+        data_type: text
+        nullable: true
+      principal_interesse_saude_c:
+        data_type: text
+        nullable: true
+      id_contato_hub_c:
+        data_type: text
+        nullable: true
+      principal_interesse_varejo_c:
+        data_type: text
+        nullable: true
+      first_email_date_time:
+        data_type: timestamp
+        nullable: true
+      codigo_da_fonte_c:
+        data_type: text
+        nullable: true
+      data_discovery_c:
+        data_type: text
+        nullable: true
+      funcionarios_c:
+        data_type: text
+        nullable: true
+      perfil_contato_c:
+        data_type: text
+        nullable: true
+      submotivo_desqualificao_c:
+        data_type: text
+        nullable: true
+      solucao_identificada_bdr_c:
+        data_type: text
+        nullable: true
+      area_empresa_receber_projeto_c:
+        data_type: text
+        nullable: true
+      budget_identificado_bdr_c:
+        data_type: text
+        nullable: true
+      problema_identificado_bdr_c:
+        data_type: text
+        nullable: true
+      segmento_atuacao_c:
+        data_type: text
+        nullable: true
+      descricao_desqualificacao_c:
+        data_type: text
+        nullable: true
+      utmcampaignname_c:
+        data_type: text
+        nullable: true
+      utm_content_name_c:
+        data_type: text
+        nullable: true
+      utm_id_name_c:
+        data_type: text
+        nullable: true
+      utm_medium_name_c:
+        data_type: text
+        nullable: true
+      utm_source_name_c:
+        data_type: text
+        nullable: true
+    write_disposition: merge
+  account:
+    columns:
+      id:
+        data_type: text
+        nullable: false
+        primary_key: true
+      is_deleted:
+        data_type: bool
+        nullable: true
+      name:
+        data_type: text
+        nullable: true
+      type:
+        data_type: text
+        nullable: true
+      record_type_id:
+        data_type: text
+        nullable: true
+      billing_street:
+        data_type: text
+        nullable: true
+      billing_city:
+        data_type: text
+        nullable: true
+      billing_state:
+        data_type: text
+        nullable: true
+      billing_postal_code:
+        data_type: text
+        nullable: true
+      billing_country:
+        data_type: text
+        nullable: true
+      website:
+        data_type: text
+        nullable: true
+      photo_url:
+        data_type: text
+        nullable: true
+      industry:
+        data_type: text
+        nullable: true
+      number_of_employees:
+        data_type: bigint
+        nullable: true
+      description:
+        data_type: text
+        nullable: true
+      currency_iso_code:
+        data_type: text
+        nullable: true
+      owner_id:
+        data_type: text
+        nullable: true
+      created_date:
+        data_type: timestamp
+        nullable: true
+      created_by_id:
+        data_type: text
+        nullable: true
+      last_modified_date:
+        data_type: timestamp
+        nullable: true
+      last_modified_by_id:
+        data_type: text
+        nullable: true
+      system_modstamp:
+        data_type: timestamp
+        nullable: true
+      is_partner:
+        data_type: bool
+        nullable: true
+      is_customer_portal:
+        data_type: bool
+        nullable: true
+      porte_do_cliente_c:
+        data_type: text
+        nullable: true
+      cnpj_c:
+        data_type: text
+        nullable: true
+      website_domain_c:
+        data_type: text
+        nullable: true
+      website_domain_and_path_c:
+        data_type: text
+        nullable: true
+      account_approval_c:
+        data_type: text
+        nullable: true
+      cliente_ativo_c:
+        data_type: text
+        nullable: true
+      n1_c:
+        data_type: text
+        nullable: true
+      n3_c:
+        data_type: text
+        nullable: true
+      diretoria_c:
+        data_type: text
+        nullable: true
+      ativo_c:
+        data_type: bool
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      account_source:
+        data_type: text
+        nullable: true
+      diretoria_respons_vel_c:
+        data_type: text
+        nullable: true
+      descri_o_do_primeiro_contato_c:
+        data_type: text
+        nullable: true
+      phone:
+        data_type: text
+        nullable: true
+      company_id_hub_c:
+        data_type: text
+        nullable: true
+      duplicadas_c:
+        data_type: text
+        nullable: true
+      last_activity_date:
+        data_type: text
+        nullable: true
+      partner_stack_partner_key_c:
+        data_type: text
+        nullable: true
+      vertical_c:
+        data_type: text
+        nullable: true
+      microvertical_c:
+        data_type: text
+        nullable: true
+      n2_c:
+        data_type: text
+        nullable: true
+      status_da_conta_c:
+        data_type: text
+        nullable: true
+      tamanho_da_empresa_c:
+        data_type: text
+        nullable: true
+      diretoria_atual_c:
+        data_type: text
+        nullable: true
+      setor_linkedin_c:
+        data_type: text
+        nullable: true
+      rating:
+        data_type: text
+        nullable: true
+      shipping_city:
+        data_type: text
+        nullable: true
+      shipping_state:
+        data_type: text
+        nullable: true
+      shipping_postal_code:
+        data_type: text
+        nullable: true
+      shipping_country:
+        data_type: text
+        nullable: true
+      shipping_street:
+        data_type: text
+        nullable: true
+      ownership:
+        data_type: text
+        nullable: true
+      id_da_empresa_c:
+        data_type: text
+        nullable: true
+      produtos_contratados_del_c:
+        data_type: text
+        nullable: true
+      customer_tier_c:
+        data_type: text
+        nullable: true
+      considera_es_ae_c:
+        data_type: text
+        nullable: true
+      annual_revenue:
+        data_type: double
+        nullable: true
+      faturamento_estimado_c:
+        data_type: double
+        nullable: true
+      primeira_atividade_do_cliente_c:
+        data_type: text
+        nullable: true
+      tempo_de_vida_do_cliente_c:
+        data_type: double
+        nullable: true
+      tempo_de_vida_do_cliente_anos_c:
+        data_type: double
+        nullable: true
+      parent_id:
+        data_type: text
+        nullable: true
+      mrr_atual_da_conta_c:
+        data_type: double
+        nullable: true
+      linha_de_neg_cio_contratada_c:
+        data_type: text
+        nullable: true
+      raz_o_social_c:
+        data_type: text
+        nullable: true
+      bdr_respons_vel_c:
+        data_type: text
+        nullable: true
+      risco_de_cr_dito_c:
+        data_type: text
+        nullable: true
+      data_de_finaliza_o_do_ltimo_contrato_c:
+        data_type: text
+        nullable: true
+      grupo_empresarial_c:
+        data_type: text
+        nullable: true
+      funcion_rios_rea_de_ti_c:
+        data_type: text
+        nullable: true
+      funcion_rios_toda_empresa_c:
+        data_type: text
+        nullable: true
+      sucesso_desired_outcome_c:
+        data_type: text
+        nullable: true
+      last_viewed_date:
+        data_type: timestamp
+        nullable: true
+      last_referenced_date:
+        data_type: timestamp
+        nullable: true
+    write_disposition: merge
+  contact:
+    columns:
+      id:
+        data_type: text
+        nullable: false
+        primary_key: true
+      is_deleted:
+        data_type: bool
+        nullable: true
+      account_id:
+        data_type: text
+        nullable: true
+      last_name:
+        data_type: text
+        nullable: true
+      first_name:
+        data_type: text
+        nullable: true
+      salutation:
+        data_type: text
+        nullable: true
+      name:
+        data_type: text
+        nullable: true
+      mailing_street:
+        data_type: text
+        nullable: true
+      mailing_city:
+        data_type: text
+        nullable: true
+      mailing_state:
+        data_type: text
+        nullable: true
+      mailing_postal_code:
+        data_type: text
+        nullable: true
+      mailing_country:
+        data_type: text
+        nullable: true
+      phone:
+        data_type: text
+        nullable: true
+      email:
+        data_type: text
+        nullable: true
+      title:
+        data_type: text
+        nullable: true
+      lead_source:
+        data_type: text
+        nullable: true
+      currency_iso_code:
+        data_type: text
+        nullable: true
+      owner_id:
+        data_type: text
+        nullable: true
+      has_opted_out_of_email:
+        data_type: bool
+        nullable: true
+      has_opted_out_of_fax:
+        data_type: bool
+        nullable: true
+      created_date:
+        data_type: timestamp
+        nullable: true
+      created_by_id:
+        data_type: text
+        nullable: true
+      last_modified_date:
+        data_type: timestamp
+        nullable: true
+      last_modified_by_id:
+        data_type: text
+        nullable: true
+      system_modstamp:
+        data_type: timestamp
+        nullable: true
+      last_activity_date:
+        data_type: text
+        nullable: true
+      is_email_bounced:
+        data_type: bool
+        nullable: true
+      photo_url:
+        data_type: text
+        nullable: true
+      rh2_formula_test_c:
+        data_type: double
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      mobile_phone:
+        data_type: text
+        nullable: true
+      department:
+        data_type: text
+        nullable: true
+      email_bounced_reason:
+        data_type: text
+        nullable: true
+      email_bounced_date:
+        data_type: timestamp
+        nullable: true
+      fax:
+        data_type: text
+        nullable: true
+      record_type_id:
+        data_type: text
+        nullable: true
+      id_migra_o_c:
+        data_type: double
+        nullable: true
+      tipo_de_contato_c:
+        data_type: text
+        nullable: true
+      partner_stack_partner_key_c:
+        data_type: text
+        nullable: true
+      partner_e_mail_c:
+        data_type: text
+        nullable: true
+      reports_to_id:
+        data_type: text
+        nullable: true
+      anivers_rio_c:
+        data_type: text
+        nullable: true
+      parceiro_c:
+        data_type: text
+        nullable: true
+      activity_metric_id:
+        data_type: text
+        nullable: true
+      linked_in_c:
+        data_type: text
+        nullable: true
+      last_viewed_date:
+        data_type: timestamp
+        nullable: true
+      last_referenced_date:
+        data_type: timestamp
+        nullable: true
+      email_pessoal_c:
+        data_type: text
+        nullable: true
+      first_call_date_time:
+        data_type: timestamp
+        nullable: true
+      first_email_date_time:
+        data_type: timestamp
+        nullable: true
+      lid_no_longer_at_company_c:
+        data_type: text
+        nullable: true
+    write_disposition: merge
+  cancelamento_c:
+    columns:
+      id:
+        data_type: text
+        nullable: true
+      owner_id:
+        data_type: text
+        nullable: true
+      is_deleted:
+        data_type: bool
+        nullable: true
+      name:
+        data_type: text
+        nullable: true
+      currency_iso_code:
+        data_type: text
+        nullable: true
+      record_type_id:
+        data_type: text
+        nullable: true
+      created_date:
+        data_type: timestamp
+        nullable: true
+      created_by_id:
+        data_type: text
+        nullable: true
+      last_modified_date:
+        data_type: timestamp
+        nullable: true
+      last_modified_by_id:
+        data_type: text
+        nullable: true
+      system_modstamp:
+        data_type: timestamp
+        nullable: true
+      last_activity_date:
+        data_type: text
+        nullable: true
+      cancelamento_revertido_c:
+        data_type: bool
+        nullable: true
+      cliente_assinou_carta_de_quita_o_c:
+        data_type: text
+        nullable: true
+      cliente_assinou_distrato_c:
+        data_type: text
+        nullable: true
+      condi_es_validadas_com_cliente_c:
+        data_type: text
+        nullable: true
+      considera_es_finais_c:
+        data_type: text
+        nullable: true
+      contato_c:
+        data_type: text
+        nullable: true
+      controle_anexos_c:
+        data_type: bool
+        nullable: true
+      data_da_carta_de_quita_o_c:
+        data_type: text
+        nullable: true
+      data_da_elabora_o_do_distrato_c:
+        data_type: text
+        nullable: true
+      data_da_reuni_o_c:
+        data_type: text
+        nullable: true
+      data_de_aceite_das_condi_es_c:
+        data_type: text
+        nullable: true
+      data_vers_o_final_do_distrato_c:
+        data_type: text
+        nullable: true
+      descri_o_da_reuni_o_c:
+        data_type: text
+        nullable: true
+      detalhes_oportunidades_c:
+        data_type: text
+        nullable: true
+      e_mail_de_cancelamento_enviado_c:
+        data_type: text
+        nullable: true
+      e_mail_de_encerramento_enviado_c:
+        data_type: text
+        nullable: true
+      fase_encerramento_c:
+        data_type: text
+        nullable: true
+      fase_c:
+        data_type: text
+        nullable: true
+      motivo_do_cancelamento_c:
+        data_type: text
+        nullable: true
+      nome_da_conta_c:
+        data_type: text
+        nullable: true
+      notas_fiscais_emitidas_c:
+        data_type: text
+        nullable: true
+      oportunidade_atualizada_c:
+        data_type: text
+        nullable: true
+      proprietario_da_conta_c:
+        data_type: text
+        nullable: true
+      receita_total_perdida_c:
+        data_type: double
+        nullable: true
+      respons_vel_da_fase_c:
+        data_type: text
+        nullable: true
+      sla_c:
+        data_type: text
+        nullable: true
+      t_tulos_em_aberto_c:
+        data_type: double
+        nullable: true
+      tipo_de_solicita_o_c:
+        data_type: text
+        nullable: true
+      valor_da_rescis_o_c:
+        data_type: double
+        nullable: true
+      valores_em_aberto_c:
+        data_type: text
+        nullable: true
+      bypassed_c:
+        data_type: bool
+        nullable: true
+      micro_motivo_do_cancelamento_c:
+        data_type: text
+        nullable: true
+      quantidade_de_oportunidades_c:
+        data_type: double
+        nullable: true
+      data_da_solicita_o_c:
+        data_type: text
+        nullable: true
+      aviso_pr_vio_contratual_c:
+        data_type: text
+        nullable: true
+      cliente_ir_pagar_multa_contratual_c:
+        data_type: text
+        nullable: true
+      data_de_encerramento_contratual_c:
+        data_type: text
+        nullable: true
+      fase_renegocia_o_c:
+        data_type: text
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      outro_motivo_c:
+        data_type: text
+        nullable: true
+      mrr_atual_c:
+        data_type: double
+        nullable: true
+      mrr_renegociado_c:
+        data_type: double
+        nullable: true
+      motivo_da_renegocia_o_c:
+        data_type: text
+        nullable: true
+      data_de_vig_ncia_novo_mrr_c:
+        data_type: text
+        nullable: true
+      observa_o_c:
+        data_type: text
+        nullable: true
+      bypass_date_c:
+        data_type: timestamp
+        nullable: true
+    write_disposition: append
+    resource: cancelamento__c
+  _dlt_pipeline_state:
+    columns:
+      version:
+        data_type: bigint
+        nullable: false
+      engine_version:
+        data_type: bigint
+        nullable: false
+      pipeline_name:
+        data_type: text
+        nullable: false
+      state:
+        data_type: text
+        nullable: false
+      created_at:
+        data_type: timestamp
+        nullable: false
+      version_hash:
+        data_type: text
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+    write_disposition: append
+settings:
+  detections:
+  - iso_timestamp
+  default_hints:
+    not_null:
+    - _dlt_id
+    - _dlt_root_id
+    - _dlt_parent_id
+    - _dlt_list_idx
+    - _dlt_load_id
+    foreign_key:
+    - _dlt_parent_id
+    root_key:
+    - _dlt_root_id
+    unique:
+    - _dlt_id
+normalizers:
+  names: snake_case
+  json:
+    module: dlt.common.normalizers.json.relational
+    config:
+      propagation:
+        tables:
+          opportunity:
+            _dlt_id: _dlt_root_id
+          lead:
+            _dlt_id: _dlt_root_id
+          account:
+            _dlt_id: _dlt_root_id
+          contact:
+            _dlt_id: _dlt_root_id
+previous_hashes:
+- 0fr2W4bM2eZ3hUWoKaw7g3cJoSIKYwasC5M8rd1rY6A=
+- woDrohvET3W1aHigMTTcphJ0IXLgLb/DbT9BqnW6W5M=
+- 40r/CnkaMW9EiYOao6TtgBILAiazcNMqkyJ8QQgC9UU=
+- d2XxbjTxSK3TzXQ1/HHF6Lb8v5tlJzvKXH4U1zJiy6k=
+- yw0jSMEtJlmtEuo5hye9YAaq18qR9Sw4fh7IoXd7BD0=
